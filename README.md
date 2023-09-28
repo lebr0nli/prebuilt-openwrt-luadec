@@ -18,21 +18,23 @@ docker pull lebr0nli/openwrt-luadec
 
 ```bash
 # Use luadec
-alias luadec='docker run -v $(pwd):/work --rm -it openwrt-luadec'
+alias luadec='docker run -v $(pwd):/work --rm -it lebr0nli/openwrt-luadec'
 luadec ./path/to/xxx.lua
 
 # You can also use lua/luac if you want
 ## Use luac
-alias luac='docker run -v $(pwd):/work --rm -it --entrypoint=/usr/local/bin/luac openwrt-luadec'
+alias luac='docker run -v $(pwd):/work --rm -it --entrypoint=/usr/local/bin/luac lebr0nli/openwrt-luadec'
 luac -l ./path/to/xxx.lua
 ## Use lua
-alias lua='docker run -v $(pwd):/work --rm -it --entrypoint=/usr/local/bin/lua openwrt-luadec'
+alias lua='docker run -v $(pwd):/work --rm -it --entrypoint=/usr/local/bin/lua lebr0nli/openwrt-luadec'
 lua ./path/to/xxx.lua
 ```
 
 ## Build locally
 
 ```bash
+git clone https://github.com/lebr0nli/prebuilt-openwrt-luadec.git
+cd prebuilt-openwrt-luadec
 docker build -t openwrt-luadec .
 ```
 
